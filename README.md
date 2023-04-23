@@ -29,6 +29,8 @@ This is a web application for blogging built using React and Node.js. It uses se
 
 To run the application, clone the repository and install the dependencies using `npm install`. You will also need to set up a PostgreSQL database and update the `.env` file with the database connection details. 
 
+To set up database, you can simple run the `docker compose up dev-db -d` or you can configure it manually.
+
 To start the server, run `npm run start:dev` in the terminal. This will start the backend server at `http://localhost:4000`.
 
 To start the frontend, open a new terminal and run `npm run serve`. This will start the development server at `http://localhost:9000`.
