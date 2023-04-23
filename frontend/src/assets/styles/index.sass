@@ -1,0 +1,35 @@
+@import "~bootstrap/scss/bootstrap"
+@import "~slick-carousel/slick/slick.css" 
+@import "~slick-carousel/slick/slick-theme.css"
+
+@import "./scss/partials/Variables"
+@import "./scss/partials/Globals"
+
+/* Layout */
+@import "./scss/components/layout/Layout"
+
+// Pages
+@import "./scss/pages/Dashboard"
+@import "./scss/pages/LoginSignup"
+@import "./scss/pages/Profile"
+@import "./scss/pages/Blog"
+
+// Page contents
+@import "./scss/components/page-contents/DashboardSlider"
+@import "./scss/components/page-contents/GridLayout"
+@import "./scss/components/page-contents/Modals"
+
+.grayed-bg
+    display: none
+    position: fixed
+    inset: 0px
+    z-index: 2000
+    background: rgba(0, 0, 0, 0.7)
+    padding: 30px
+
+    &.active
+        display: block
+    .spinner
+        position: fixed
+        top: 50%
+        left: 50%
