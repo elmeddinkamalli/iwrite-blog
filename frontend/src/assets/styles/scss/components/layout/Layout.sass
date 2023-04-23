@@ -1,0 +1,258 @@
+.layout
+    padding-left: $sidebar-width
+    padding-top: 70px
+
+    @media screen and (max-width: $medium)
+        padding-left: 0
+        padding-top: 70px
+
+    .header
+        position: fixed
+        top: 0
+        left: 0
+        right: 0
+        height: 70px
+        background: #fff
+        z-index: 4
+        // border-bottom: 1px solid #b2b2b2
+        padding-left: $sidebar-width
+        color: $base-color-gray
+
+        @media screen and (max-width: $medium)
+            background: $base-color-gray
+            padding-left: 0
+
+
+        .header_search-box
+            position: relative
+
+            input
+                width: 350px
+                border: 1px solid
+                border-radius: 12px
+
+                @media screen and (max-width: $large)
+                    width: 100%
+
+            svg
+                position: absolute
+                right: 15px
+                top: 0
+                cursor: pointer
+
+        .localization
+            cursor: pointer
+            height: 30px
+            padding: 0
+            background-image: none
+            border: none
+            font-weight: 600
+            color: $base-color-gray-500
+
+        .find-blog
+            border: 1px solid
+            border-radius: 90px
+            font-weight: 600
+            color: $base-color-gray
+            white-space: nowrap
+
+            &:hover
+                background-color: $base-color-gray
+                color: #fff
+
+        .bell
+            a
+                position: relative
+                cursor: pointer
+
+                &::after
+                    content: ''
+                    position: absolute
+                    top: -7px
+                    width: 12px
+                    height: 12px
+                    background: #58C27D
+                    border-radius: 50%
+                    right: -7px
+                    display: inline-block
+                    vertical-align: -0.125em
+                    opacity: 0
+                    animation: 0.75s linear infinite spinner-grow
+                    display: none
+
+                &.hasNotf
+                    &::after
+                        display: block
+                        
+
+        .header_profile
+            .avatar
+                width: 30px
+                height: 30px
+                img
+                    object-fit: cover
+
+        .header_mobile
+            position: relative
+            z-index: 5
+            background: $base-color-gray
+            .header_mobile-menu_button_container
+                height: 30px
+                width: 30px
+                cursor: pointer
+                display: flex
+                flex-direction: column
+                justify-content: center
+                align-items: center
+
+                .header_mobile-menu_button,
+                .header_mobile-menu_button::before,
+                .header_mobile-menu_button::after
+                    display: block
+                    background-color: #fff
+                    position: absolute
+                    height: 4px
+                    width: 30px
+                    transition: transform 400ms cubic-bezier(0.23, 1, 0.32, 1)
+                    border-radius: 2px
+
+                .header_mobile-menu_button::before
+                    content: ''
+                    margin-top: -8px
+
+                .header_mobile-menu_button::after
+                    content: ''
+                    margin-top: 8px
+
+            #menu-toggle
+                &:checked
+                    & + .header_mobile-menu_button_container
+                        .header_mobile-menu_button
+                            background: rgba(255, 255, 255, 0)
+                            &::before
+                                margin-top: 0px
+                                transform: rotate(405deg)
+                            &::after
+                                margin-top: 0px
+                                transform: rotate(-405deg)
+
+        .header_mobile-search-toggle
+            svg
+                cursor: pointer
+                path
+                    fill: #fff
+
+        .header_mobile-user
+            width: 30px
+            height: 30px
+            border-radius: 50%
+
+            img
+                width: 100%
+                height: 100%
+                object-fit: cover
+                border-radius: 50%
+
+        .header_mobile-search_bar
+            position: absolute
+            top: 0
+            left: 0
+            right: 0
+            height: 40px
+            z-index: 2
+            transition: .3s top
+            background: $base-color-gray
+            border-top: 1px solid $base-color-gray
+
+            &.open
+                top: 100%
+
+            input
+                background: transparent
+                border: none
+                outline: none
+
+            a
+                svg
+                    width: 30px
+            svg
+                path
+                    fill: #fff
+
+            #search-bar-close
+                transform: scale(2)
+                width: 15px
+                cursor: pointer
+
+            ::placeholder
+                color: #fff
+
+    .sidebar
+        position: fixed
+        left: 0
+        top: 0
+        height: 100vh
+        width: $sidebar-width
+        background: $base-color-gray
+        z-index: 5
+        transition: .3s width, .3s left
+
+        @media screen and (max-width: $medium)
+            z-index: 3
+            left: -100%
+
+            &.open
+                left: 0
+                width: 100%
+            
+            .logo
+                display: none
+
+        .text-sidebar-grayed
+            color: $base-color-light-gray
+
+        .sidebar-menu-lists
+            height: calc(100% - 100px)
+
+            .list-group
+                .list-group-item-link
+                    cursor: pointer
+                    position: relative
+
+                    .list-item-icon
+                        width: 24px
+
+                        path
+                            fill: #fff
+                    &:hover:not(.active)
+                        background-color: #123968 !important
+
+                .active
+                    background-color: #1F5FAD !important
+
+                    &::before
+                        content: ''
+                        position: absolute
+                        width: 5px
+                        height: 100%
+                        background: $base-color-orange
+                        left: 0
+                        top: 0
+
+                    .list-item-icon
+                        path
+                            fill: $base-color-orange
+        .logo
+            width: 100%
+
+        .sidebar-mobile-user-profile
+            .sidebar-mobile-user-profile-avatar
+                width: 70px
+                height: 70px
+                border-radius: 50%
+
+                img
+                    width: 100%
+                    height: 100%
+                    object-fit: cover
+                    border-radius: 50%
