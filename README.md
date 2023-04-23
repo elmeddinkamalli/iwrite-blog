@@ -31,4 +31,4 @@ To run the application, clone the repository and install the dependencies using 
 
 To start the server, run `npm run start:dev` in the terminal. This will start the backend server at `http://localhost:4000`.
 
-To start the frontend, open a new terminal and run `npm start`. This will start the development server at `http://localhost:9000`.
+To start the frontend, open a new terminal and run `npm run serve`. This will start the development server at `http://localhost:9000`.
